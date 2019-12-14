@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/email_us_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.sti_agent.EmailUsFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="#f1f1f1"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-mail Us"
+            android:textColor="@color/colorPrimary"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:textSize="22sp"
+            />
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layout_inner"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_width="match_parent">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:scrollbars="vertical"
+                android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f1f1f1"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="4dp"
+        android:padding="@dimen/size_ten"
+        android:layout_margin="@dimen/size_eight"
+        android:layout_gravity="center"
+        >
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:padding="@dimen/size_ten"
+            android:background="#f1f1f1"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutFullName"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                >
+
+                <EditText
+                    android:id="@+id/full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:background="@drawable/rounded_bg"
+                    android:hint="Full Name"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/size_ten"
+                    tools:targetApi="o"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                >
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:background="@drawable/rounded_bg"
+                    android:hint="Email"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/size_ten"
+                    tools:targetApi="o"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutPhoneNum"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="visible"
+                >
+
+                <EditText
+                    android:id="@+id/phone_num"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:background="@drawable/rounded_bg"
+                    android:hint="Phone Number"
+                    android:importantForAutofill="noExcludeDescendants"
+                    android:inputType="text"
+                    android:textAllCaps="true"
+                    android:padding="@dimen/size_ten"
+                    tools:targetApi="o"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/inputLayoutMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAlignment="textStart"
+                android:visibility="visible"
+                >
+
+                <EditText
+                    android:id="@+id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="@dimen/size_three"
+                    android:hint="Message"
+                    android:singleLine="false"
+                    android:inputType="text|textMultiLine"
+                    android:maxLines="5"
+                    android:textAlignment="textStart"
+                    android:gravity="start"
+                    android:background="@drawable/rounded_bg"
+                    android:importantForAutofill="noExcludeDescendants"
+
+                    android:padding="@dimen/size_ten"
+                    tools:targetApi="o"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/send_mail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/size_fifteen"
+                android:background="@drawable/rounded_bg_color_btn"
+                android:text="Send Now"
+                android:textSize="16sp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@android:color/white"
+                android:visibility="visible" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_thirty"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:indicatorColor="@color/colorAccent"
+                app:indicatorName="BallPulseIndicator" />
+
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+            </ScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

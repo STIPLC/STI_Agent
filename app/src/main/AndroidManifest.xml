@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.sti_agent">
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <application
+        android:name=".BaseApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/sti_logo_dark"
+        android:label="STI Agent"
+        android:roundIcon="@drawable/sti_logo_dark"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppThemeSuper"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".LocateUs"
+            android:label="@string/title_activity_locate_us" />
+
+
+
+        <meta-data
+            android:name="co.paystack.android.PublicKey"
+            android:value="pk_test_d0ca9d91eeee10ecba75c648e988170b29d0978e" />
+
+
+        <activity
+            android:name=".Splash"
+            android:theme="@style/AppThemeSuper">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SignUp" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <!--
+  <meta-data
+              android:name="co.paystack.android.PublicKey"
+              android:value="pk_test_d0ca9d91eeee10ecba75c648e988170b29d0978e"/>
+        -->
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
+        <activity
+            android:name=".operation_activity.CustomerManageActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".operation_activity.MakeClaimActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".operation_activity.PolicyRenewalActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".operation_activity.QuoteBuyActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".operation_activity.RegisterCustomerActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ForgetPassword" />
+        <activity android:name=".SignIn" />
+        <activity android:name=".Forms.MotorInsuredForm" />
+        <activity android:name=".Forms.EticForm" />
+        <activity android:name=".Forms.MarineForm" />
+        <activity android:name=".Forms.AllRiskForm" />
+        <activity android:name=".Forms.SwissForm" />
+        <activity android:name=".Forms.TrackClaim" />
+        <activity android:name=".Forms.Claim" />
+       <!-- <activity android:name=".Import.ImportingForm" />-->
+        <activity
+            android:name=".operation_activity.PolicyPaymentActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".operation_activity.WalletPaymentActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Detail_activities.MyClaimsDetail" />
+        <activity android:name=".Detail_activities.MyAllRiskDetail"
+            />
+        <activity android:name=".Detail_activities.MyEticDetail" />
+        <activity android:name=".Detail_activities.MySwissDetail" />
+        <activity
+            android:name=".Forms.ManagePolicy"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Forms.ClaimList"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".Detail_activities.MyVehicleDetail" />
+        <activity android:name=".Detail_activities.MyCustomerDetail"
+        />
+        <activity android:name=".operation_activity.PolicyWalletPayActivity" />
+        <activity android:name=".operation_activity.PinActivity" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

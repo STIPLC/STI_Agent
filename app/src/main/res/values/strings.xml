@@ -1,0 +1,243 @@
+<resources>
+    <string name="app_name">STI_Agent</string>
+    <string name="title_home">Home</string>
+    <string name="title_customer">Customer</string>
+    <string name="title_transaction">Transactions</string>
+    <string name="title_profile">Profile</string>
+    <string name="login_txt">Click to Login</string>
+
+
+    <!--Type array-->
+
+
+    <string-array name="user_type_array">
+        <item> Select User Type </item>
+        <item> Agent </item>
+        <item> Broker </item>
+    </string-array>
+
+    <string-array name="type_array">
+        <item> Select Type </item>
+        <item> Individual</item>
+        <item> Corporate</item>
+    </string-array>
+
+    <string-array name="travel_mode_array">
+        <item> Select Mode of Travel* </item>
+        <item> Road </item>
+        <item> Air </item>
+        <item> Sea </item>
+        <item> Rail </item>
+    </string-array>
+
+    <string-array name="sti_est_array">
+        <item> Should STI Provide Estimate </item>
+        <item> Yes </item>
+        <item> No </item>
+    </string-array>
+
+
+    <string-array name="claim_array">
+        <item> Select Claim Type </item>
+        <item> Motor Insurance </item>
+        <item> Non-motor Insurance </item>
+    </string-array>
+
+    <!--gender array-->
+    <string-array name="gender_array">
+        <item> Gender </item>
+        <item> Male</item>
+        <item> Female</item>
+    </string-array>
+
+    <string-array name="country_array">
+        <item> Country </item>
+        <item> Nigeria</item>
+        <item> Other Countries </item>
+    </string-array>
+
+    <string-array name="state_array">
+        <item> State </item>
+        <item> Abia</item>
+        <item> Adamawa</item>
+        <item> Anambra</item>
+        <item> Akwa Ibom</item>
+        <item> Bauchi</item>
+        <item> Bayelsa</item>
+        <item> Benue</item>
+        <item> Borno</item>
+        <item> Cross River</item>
+        <item> Delta</item>
+        <item> Ebonyi</item>
+        <item> Enugu</item>
+        <item> Edo</item>
+        <item> Ekiti</item>
+        <item> Gombe</item>
+        <item> Imo</item>
+        <item> Jigawa</item>
+        <item> Kaduna</item>
+        <item> Kano</item>
+        <item> Katsina</item>
+        <item> Kebbi</item>
+        <item> Kogi</item>
+        <item> Kwara</item>
+        <item> Lagos</item>
+        <item> Nasarawa</item>
+        <item> Niger</item>
+        <item> Ogun</item>
+        <item> Ondo</item>
+        <item> Osun</item>
+        <item> Oyo</item>
+        <item> Plateau</item>
+        <item> Rivers</item>
+        <item> Sokoto</item>
+        <item> Taraba</item>
+        <item> Yobe</item>
+        <item> Zamfara</item>
+        <item> FCT - Abuja</item>
+    </string-array>
+
+    <string-array name="disable_array">
+        <item> Select Disability </item>
+        <item> Yes </item>
+        <item> No</item>
+    </string-array>
+
+
+    <string-array name="marital_array">
+        <item> Select Marital Status </item>
+        <item> Single</item>
+        <item> Married</item>
+        <item> Divorced </item>
+        <item> Widow </item>
+        <item> Widower </item>
+    </string-array>
+
+    <string-array name="currency_array">
+        <item> Select Currency </item>
+        <item> Dollar </item>
+        <item> Naira </item>
+        <item> Euro </item>
+        <item> Pounds </item>
+        <item> CFA </item>
+    </string-array>
+
+
+    <string-array name="convey_array">
+        <item> Mode of Conveyance </item>
+        <item> Air </item>
+        <item> Sea </item>
+        <item> Rail </item>
+        <item> Road </item>
+    </string-array>
+
+    <string-array name="select_array">
+        <item> Select Item </item>
+        <item> Mobile Phones </item>
+        <item> Laptops </item>
+        <item> Projectors </item>
+        <item> Jewellery </item>
+        <item> Wrist Watch </item>
+
+    </string-array>
+
+    <string-array name="benefit_array">
+        <item> Select Benefit Category </item>
+        <item> Single</item>
+        <item> Double</item>
+        <item> Triple </item>
+    </string-array>
+
+    <string-array name="cover_array">
+        <item> Select Cover* </item>
+        <item> Clause C </item>
+
+    </string-array>
+    <string-array name="prefix_array">
+        <item> Select Prefix </item>
+        <item> Mr.</item>
+        <item> Mrs.</item>
+        <item> Ms.</item>
+        <item> Prof.</item>
+        <item> Chief.</item>
+        <item> Dr.</item>
+        <item> Hrm.</item>
+    </string-array>
+
+
+    <string-array name="policy_type_array">
+        <item> Select Policy Type </item>
+        <item> Private</item>
+        <item> Commercial</item>
+        <item> Motor Cycle</item>
+    </string-array>
+
+    <string-array name="product_type_array">
+        <item> Select Product </item>
+        <item> Bond Policy</item>
+        <item> Engineering Insurance </item>
+        <item> Aviation Insurance</item>
+        <item> Burglary House Breaking Insurance </item>
+        <item> Builders Liability Insurance</item>
+
+    </string-array>
+
+
+    <string-array name="private_type_array">
+        <item> Select Cover </item>
+        <item> 3rd Party Only </item>
+        <item> 3rd Party Fire and theft </item>
+        <item> Enhanced 3rd Party </item>
+        <item> Comprehensive </item>
+    </string-array>
+
+
+    <string-array name="pEnhance_type_array">
+        <item> Select Enhanced 3rd Party </item>
+        <item> Unique </item>
+        <item> Luxury </item>
+        <item> Prestige </item>
+    </string-array>
+
+    <string-array name="mode_of_payment">
+        <item> Mode of Payment </item>
+        <item> Wallet </item>
+        <item> PayStack </item>
+
+    </string-array>
+
+    <string-array name="commercial_type_array">
+        <item> Select Cover </item>
+        <item> 3rd Party Only </item>
+        <item> Comprehensive </item>
+    </string-array>
+
+    <string-array name="motor_cycle_type_array">
+        <item> Select Motor Cycle Policy </item>
+        <item> 3rd Party Only </item>
+        <item> Comprehensive </item>
+    </string-array>
+
+    <string-array name="vehicleMaker_type_array">
+        <item> Select Vehicle Maker </item>
+
+    </string-array>
+
+    <string-array name="vehicleBody_type_array">
+        <item> Select Body Type </item>
+        <item> Cars </item>
+        <item> SUV/MUV </item>
+        <item> Coupe </item>
+        <item> Wagon </item>
+        <item> Jeep </item>
+        <item> Saloon/Sedans </item>
+    </string-array>
+
+    <string name="naira_currency">NGN</string>
+    <string name="policy_no">Policy Num</string>
+    <string name="desc">Wallet Description</string>
+    <string name="privacy">I declare to the best of my knowledge and belief that the above information are true and all necessary particulars affecting the assessment of the risk have been disclosed.</string>
+    <string name="title_activity_locate_us">Corperate Head Office</string>
+
+
+</resources>

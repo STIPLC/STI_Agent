@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/dash_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".UserMain_Fragment.Fragment_Dashboard">
+    <ImageView
+        android:id="@+id/bg_curve"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/toolbar_asset"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="18dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/linear_wallet_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_marginTop="15dp"
+            >
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/wallet_blance_card"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorAccent"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp"
+                android:padding="@dimen/size_fifteen"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_wallet"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Wallet Balance"
+                        android:layout_marginTop="4dp"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textColor="@color/colorWhite"
+                         />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="3dp"
+
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:srcCompat="@drawable/ic_nigeria_naira_currency_symbol"
+                            />
+                        <TextView
+                            android:id="@+id/wallet_balance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="0000."
+                            android:textSize="17sp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:textColor="@color/colorWhite"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            />
+                        <TextView
+                            android:id="@+id/wallet_kobo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="00"
+                            android:textSize="10sp"
+                            android:fontFamily="@font/montserrat_semibold"
+                            android:textColor="@color/colorWhite"
+                            android:layout_gravity="center_vertical"
+                            android:gravity="start"
+                            android:visibility="gone"
+                            />
+
+                        <com.wang.avi.AVLoadingIndicatorView
+                            android:id="@+id/progressbar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/size_thirty"
+                            android:layout_gravity="end"
+                            android:layout_marginStart="10dp"
+                            android:visibility="gone"
+                            app:indicatorColor="@color/colorWhite"
+                            app:indicatorName="BallPulseIndicator" />
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+            <View
+                android:layout_width="10dp"
+                android:layout_height="1dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/fund_wallet_card"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                app:cardElevation="6dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorWhite"
+                app:cardCornerRadius="6dp"
+                android:padding="@dimen/size_fifteen"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/ic_shopping_cart_black_24dp"
+                        />
+
+                    <TextView
+                        android:id="@+id/fund_wallet_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Fund Wallet"
+                        android:layout_marginTop="4dp"
+                        android:linksClickable="true"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="2dp"
+                        android:fontFamily="@font/montserrat_semibold"
+                        android:textColor="@color/colorPrimary"
+                        />
+                  <!--  <LinearLayout
+                        android:id="@+id/create_wallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="end"
+
+                        >
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            app:srcCompat="@drawable/ic_wallet_primary_color"
+                            />
+                        <TextView
+                            android:id="@+id/create_wallet_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="Create Wallet"
+                            android:linksClickable="true"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/montserrat_regular"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="center_vertical"
+                            android:layout_gravity="center_vertical"
+                            />
+
+
+
+
+                    </LinearLayout>
+-->
+
+
+                </LinearLayout>
+
+
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="@dimen/size_eight"
+            android:layout_marginTop="@dimen/size_twenty_three"
+            android:layout_marginBottom="@dimen/size_fifteen"
+            >
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+
+
+                >
+
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/slider"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+
+            </FrameLayout>
+
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="12dp"
+            android:scrollbars="vertical"
+            android:elevation="10dp"
+            android:visibility="visible"
+            tools:listitem="@layout/dash_list" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/transaction_notify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:background="@drawable/spinner_bg"
+            android:layout_marginBottom="6dp"
+            android:layout_marginTop="4dp"
+            app:cardElevation="@dimen/size_ten"
+            app:cardPreventCornerOverlap="true"
+            app:cardCornerRadius="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/transact_note"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:text="Hi Name, you have an incomplete transaction"
+                    android:textAlignment="textStart"
+                    android:textSize="16sp"
+                    android:layout_margin="@dimen/size_eight"
+                    android:textColor="@color/colorBlack"
+                    android:fontFamily="@font/montserrat_regular" />
+
+                <Button
+                    android:id="@+id/transactn_notify_btn"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Check Transaction"
+                    android:textSize="10sp"
+                    android:padding="4dp"
+                    android:layout_margin="4dp"
+                    android:textColor="@color/colorPrimary"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:background="@drawable/spinner_bg"
+                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </LinearLayout>
+
+
+
+  </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

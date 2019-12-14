@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/signin_lyout"
+    tools:context=".SignUp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/register_bg"
+        android:scaleType="centerCrop"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="@dimen/size_ten"
+        android:layout_gravity="center_vertical"
+        android:padding="@dimen/size_twenty"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:layout_margin="5dp"
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/a_card"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimary"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp"
+                android:padding="@dimen/size_fifteen"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Agent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorWhite"
+                    android:gravity="center_vertical"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+           <Space
+               android:layout_width="4dp"
+               android:layout_height="4dp"/>
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/b_card"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorAccent"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="6dp"
+                android:padding="@dimen/size_fifteen"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Broker"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </LinearLayout>
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/layout_inner"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/agent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/agent_card"
+                android:layout_width="100dp"
+                android:layout_height="6dp"
+                android:layout_weight="1"
+                android:layout_margin="5dp"
+                android:backgroundTint="@color/colorAccent"
+                app:cardCornerRadius="6dp"
+                android:padding="@dimen/size_fifteen"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sign In"
+                android:textSize="@dimen/size_twenty"
+                android:fontFamily="@font/montserrat_bold"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="4dp"
+                android:padding="2dp"
+                android:textAlignment="center"/>
+
+            <LinearLayout
+                android:id="@+id/relative_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutAgentEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/agent_email_editxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_three"
+                        android:drawableEnd="@drawable/ic_account_circle_black_24dp"
+                        android:hint="Agent Email"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/size_ten"
+                        tools:targetApi="o" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutBrokersEmail"
+                    android:layout_width="match_parent"
+                    android:visibility="gone"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/brokers_email_editxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_three"
+                        android:drawableEnd="@drawable/ic_account_circle_black_24dp"
+                        android:hint="Broker Email"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/size_ten"
+                        tools:targetApi="o" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/inputLayoutPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <EditText
+                        android:id="@+id/password_editxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_three"
+                        android:drawableEnd="@drawable/ic_fingerprint_black_24dp"
+                        android:hint="Password"
+                        android:importantForAutofill="noExcludeDescendants"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/size_ten"
+                        tools:targetApi="o" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/sign_in_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/size_ten"
+                android:layout_marginTop="@dimen/size_ten"
+                android:background="@drawable/rounded_bg_color_btn"
+                android:padding="@dimen/size_twelve"
+                android:text="Sign In"
+                android:fontFamily="@font/montserrat_semibold"
+                android:drawableEnd="@drawable/ic_chevron_right_black_24dp"
+                android:layout_marginRight="@dimen/size_ten"
+                android:layout_marginLeft="@dimen/size_ten"
+                android:visibility="visible"
+                android:textColor="@color/colorPrimary"
+                android:elevation="4dp"
+                tools:ignore="RtlSymmetry" />
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progressbar"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_twenty_eight"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                app:indicatorColor="@color/colorAccent"
+                app:indicatorName="BallPulseIndicator"
+                tools:ignore="RtlHardcoded"/>
+
+            <TextView
+                android:id="@+id/forget_pass"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textAlignment="center"
+                android:text="Forgot Password? "
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorGrey"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Not yet Registered? "
+                    android:gravity="center_horizontal"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="17sp"
+                    android:textColor="@color/colorGrey"
+                    />
+
+                <TextView
+                    android:id="@+id/register"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Click to Register"
+                    android:gravity="center_horizontal"
+                    android:textColorLink="@color/colorPrimary"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorGrey"
+                    />
+            </LinearLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/broker_card"
+                android:layout_width="100dp"
+                android:layout_height="6dp"
+                android:layout_gravity="end"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/colorPrimary"
+                app:cardCornerRadius="6dp"
+                android:padding="@dimen/size_fifteen"
+                />
+
+        </LinearLayout>
+
+        </ScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </LinearLayout>
+
+
+
+
+
+</FrameLayout>

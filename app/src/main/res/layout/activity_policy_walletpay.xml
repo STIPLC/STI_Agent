@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        app:popupTheme="@style/MyPopupTheme"
+        android:elevation="4dp"
+        android:theme="@style/MyToolBarTheme"
+        app:titleTextAppearance="@style/Toolbar.TitleText"
+        app:titleTextColor="@color/colorWhite"
+        app:title="Wallet Payment">
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/profile_header"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:text="Pay with Wallet"
+            android:fontFamily="@font/montserrat_bold"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"/>
+
+        <ImageView
+            app:srcCompat="@drawable/ic_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:elevation="4dp"
+            android:background="@drawable/pay_shape"
+            android:orientation="vertical"
+            android:padding="@dimen/size_ten">
+
+            <TextView
+                android:id="@+id/amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/size_six"
+                android:layout_marginTop="@dimen/size_six"
+                android:text="NGN 5000.00"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/policy_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/size_six"
+                android:layout_marginTop="@dimen/size_six"
+                android:text="POLICY NUM: MOT/564/YOU/87"
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="0.5dp"
+                android:layout_marginBottom="@dimen/size_five"
+                android:background="@android:color/darker_gray"/>
+
+
+
+
+
+            <Button
+                android:id="@+id/pay_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/size_six"
+                android:background="@drawable/green_round_shape"
+                android:text="Pay Securely"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"/>
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/size_thirty"
+                android:layout_gravity="end"
+                android:visibility="gone"
+                app:indicatorColor="@color/colorPrimary"
+                app:indicatorName="BallPulseIndicator" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
