@@ -59,7 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:text="© 2019 Soverign Trust Insurance Plc \n All right reserved."
+            android:text="© 2019 Sovereign Trust Insurance Plc \n All right reserved."
             android:textSize="15sp"
             android:fontFamily="@font/montserrat_regular"
             android:layout_margin="@dimen/size_eight"

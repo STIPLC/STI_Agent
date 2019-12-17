@@ -61,6 +61,21 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <EditText
+                        android:id="@+id/start_date"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/size_three"
+                        android:layout_marginBottom="@dimen/size_five"
+                        android:textSize="15sp"
+                        android:background="@drawable/rounded_bg"
+                        android:hint="Start Date* (required) "
+                        android:inputType="none"
+                        android:focusable="false"
+                        android:padding="@dimen/size_ten"
+                        tools:targetApi="o"
+                        />
+
 
                     <Spinner
                         android:id="@+id/prefix_spinner_s"
@@ -155,6 +170,16 @@
                             tools:targetApi="o"
                             />
                     </com.google.android.material.textfield.TextInputLayout>
+
+                    <Spinner
+                        android:id="@+id/state_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="@dimen/size_three"
+                        android:background="@drawable/spinner_bg"
+
+
+                        />
 
                     <Spinner
                         android:id="@+id/marital_spinner_s1"
@@ -295,15 +320,7 @@
                         android:background="@drawable/spinner_bg"
                         />
 
-                    <Spinner
-                        android:id="@+id/state_spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="@dimen/size_three"
-                        android:background="@drawable/spinner_bg"
 
-
-                        />
 
                     <Button
                         android:id="@+id/upload_passport_btn_s1"

@@ -70,13 +70,15 @@ public void onBindViewHolder(@NonNull MyViewHolder holder, int i) {
                 case "List of Claim":
                     nextActivity("List of Claim", "check your claim status", ClaimList.class);
                         break;
-                case "Set/Change Wallet Pin":
-                     nextActivity("Wallet Pin", "set or change your pin", PinActivity.class);
+                case "Change Wallet Pin":
+                     nextActivity("Wallet Pin", "change your wallet pin", PinActivity.class);
                      break;
 
                 }
 
-                });
+                }
+
+                );
         }
 
 private void nextActivity(String title,String subTitle, Class cardActivityClass) {

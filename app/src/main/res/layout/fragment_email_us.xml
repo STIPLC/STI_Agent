@@ -13,10 +13,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:background="#f1f1f1"
+        android:background="@drawable/dashboard_bg"
+        android:padding="8dp"
         android:layout_gravity="center_vertical"
         android:orientation="vertical"
         >
+
+
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,27 +32,22 @@
             android:textSize="22sp"
             />
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:id="@+id/layout_inner"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_width="match_parent">
-            <ScrollView
-                android:layout_width="match_parent"
-                android:scrollbars="vertical"
-                android:layout_height="wrap_content">
+
 
     <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#f1f1f1"
+        android:background="@color/colorWhite"
         app:cardCornerRadius="5dp"
         app:cardElevation="4dp"
         android:padding="@dimen/size_ten"
         android:layout_margin="@dimen/size_eight"
         android:layout_gravity="center"
         >
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:layout_height="wrap_content">
         <LinearLayout
 
             android:layout_width="match_parent"
@@ -174,12 +174,9 @@
 
 
         </LinearLayout>
-
+        </ScrollView>
 
     </com.google.android.material.card.MaterialCardView>
-            </ScrollView>
-
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 

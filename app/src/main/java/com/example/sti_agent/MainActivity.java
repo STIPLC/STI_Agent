@@ -222,7 +222,6 @@ public class MainActivity extends AppCompatActivity {
     private void changePassword() {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
         builder.setTitle("Change Password");
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.change_pass, null);

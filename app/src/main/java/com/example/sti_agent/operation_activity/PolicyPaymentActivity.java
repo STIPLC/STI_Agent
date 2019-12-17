@@ -320,10 +320,10 @@ public class PolicyPaymentActivity extends AppCompatActivity {
 
     private void applyToolbarChildren(String title) {
         setSupportActionBar(toolBar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        getSupportActionBar().setDisplayShowHomeEnabled(false);
         getSupportActionBar().setTitle(title);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_keyboard_arrow_left_black_24dp);
+       // getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_keyboard_arrow_left_black_24dp);
         //setting Elevation for > API 21
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             toolBar.setElevation(10f);
@@ -427,11 +427,12 @@ public class PolicyPaymentActivity extends AppCompatActivity {
         dialog = null;
     }
 
-    @Override
+ /*   @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        startActivity(new Intent(PolicyPaymentActivity.this, MainActivity.class));
         this.finish();
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @Override
     public void onBackPressed() {

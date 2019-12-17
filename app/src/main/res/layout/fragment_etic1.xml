@@ -146,6 +146,16 @@
                             />
                     </com.google.android.material.textfield.TextInputLayout>
 
+
+                    <Spinner
+                        android:id="@+id/state_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="@dimen/size_three"
+                        android:background="@drawable/spinner_bg"
+
+                        />
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/inputLayoutPhone_e1"
                         android:layout_width="match_parent"
@@ -334,14 +344,6 @@
                      </com.google.android.material.textfield.TextInputLayout>-->
 
 
-                    <Spinner
-                        android:id="@+id/state_spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="@dimen/size_three"
-                        android:background="@drawable/spinner_bg"
-
-                        />
                     <Button
                         android:id="@+id/upload_img_btn_e1"
                         android:layout_width="match_parent"

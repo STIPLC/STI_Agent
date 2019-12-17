@@ -90,7 +90,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Departure Place: "
+                    android:text="Departure \nPlace: "
                     android:layout_margin="6dp"
                     android:textSize="@dimen/size_twenty"
                     android:textColor="@color/colorGrey"
@@ -117,7 +117,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Arrival Place: "
+                    android:text="Arrival \nPlace: "
                     android:textSize="@dimen/size_twenty"
                     android:layout_margin="6dp"
                     android:textColor="@color/colorGrey"
@@ -144,7 +144,7 @@
 
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Country of Visit Address: "
+                    android:text="Country \nof Visit \nAddress: "
                     android:textSize="@dimen/size_twenty"
                     android:layout_margin="6dp"
                     android:textColor="@color/colorGrey"

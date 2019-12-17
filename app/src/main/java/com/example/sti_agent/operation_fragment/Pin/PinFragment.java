@@ -1,5 +1,6 @@
 package com.example.sti_agent.operation_fragment.Pin;
 
+import android.content.Intent;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,10 +11,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
+import com.example.sti_agent.MainActivity;
 import com.example.sti_agent.Model.Errors.APIError;
 import com.example.sti_agent.Model.Errors.ErrorUtils;
 import com.example.sti_agent.Model.Pin.UserChangePin;
@@ -23,7 +28,9 @@ import com.example.sti_agent.Model.Pin.setPin;
 import com.example.sti_agent.Model.ServiceGenerator;
 import com.example.sti_agent.NetworkConnection;
 import com.example.sti_agent.R;
+import com.example.sti_agent.UserMain_Fragment.Fragment_Dashboard;
 import com.example.sti_agent.UserPreferences;
+import com.example.sti_agent.fragment.TransactionHistoryFragment;
 import com.example.sti_agent.retrofit_interface.ApiInterface;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputLayout;
@@ -49,24 +56,25 @@ public class PinFragment extends Fragment implements View.OnClickListener{
     /** ButterKnife Code **/
     @BindView(R.id.pin_layout)
     CoordinatorLayout mPINLayout;
-    @BindView(R.id.set_pin_layout)
-    LinearLayout mSetPinLayout;
-    @BindView(R.id.inputLayoutPin)
-    TextInputLayout mInputLayoutPin;
-    @BindView(R.id.pin_editxt)
-    EditText mPinEditxt;
-    @BindView(R.id.set_pin_btn)
-    Button mSetPinBtn;
-    @BindView(R.id.set_change_pin_txt)
-    TextView set_change_pin_txt;
-    @BindView(R.id.set_pin_progressbar)
-    AVLoadingIndicatorView mSetPinProgressbar;
+   /* @BindView(R.id.set_pin_layout)
+    LinearLayout mSetPinLayout;*/
+ /*   @BindView(R.id.inputLayoutPin)
+    TextInputLayout mInputLayoutPin;*/
+   /* @BindView(R.id.pin_editxt)
+    EditText mPinEditxt;*/
+    /*@BindView(R.id.set_pin_btn)
+    Button mSetPinBtn;*/
+    /*@BindView(R.id.set_change_pin_txt)
+    TextView set_change_pin_txt;*/
+   /* @BindView(R.id.set_pin_progressbar)
+    AVLoadingIndicatorView mSetPinProgressbar;*/
     @BindView(R.id.change_pin_layout)
     LinearLayout mChangePinLayout;
     @BindView(R.id.inputLayoutOldPin)
     TextInputLayout mInputLayoutOldPin;
     @BindView(R.id.old_pin_editxt)
     EditText mOldPinEditxt;
+
     @BindView(R.id.inputLayoutNewPin)
     TextInputLayout mInputLayoutNewPin;
     @BindView(R.id.new_pin_editxt)
@@ -75,9 +83,11 @@ public class PinFragment extends Fragment implements View.OnClickListener{
     Button mChangePinBtn;
     @BindView(R.id.change_pin_progressbar)
     AVLoadingIndicatorView mChangePinProgressbar;
-    @BindView(R.id.change_pin_txt)
-    TextView mChangePinTxt;
+   /* @BindView(R.id.change_pin_txt)
+    TextView mChangePinTxt;*/
     /** ButterKnife Code **/
+
+    Fragment fragment;
 
     NetworkConnection networkConnection=new NetworkConnection();
 
@@ -121,8 +131,8 @@ public class PinFragment extends Fragment implements View.OnClickListener{
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_pin, container, false);
         ButterKnife.bind(this,view);
-        mChangePinTxt.setPaintFlags(mChangePinTxt.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-        mChangePinTxt.setText("Click to Change Your Pin");
+       /* mChangePinTxt.setPaintFlags(mChangePinTxt.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
+        mChangePinTxt.setText("Click to Change Your Pin");*/
         userPreferences=new UserPreferences(getContext());
 
         setViewActions();
@@ -136,40 +146,40 @@ public class PinFragment extends Fragment implements View.OnClickListener{
     private void setViewActions() {
 
         mChangePinBtn.setOnClickListener(this);
-        mChangePinTxt.setOnClickListener(this);
-        mSetPinBtn.setOnClickListener(this);
+        //mChangePinTxt.setOnClickListener(this);
+        //mSetPinBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.set_pin_btn:
+           /* case R.id.set_pin_btn:
 //                validate user input
                 set_change_pin_txt.setText("Set your Pin");
                 validateUserInputs();
-                break;
+                break;*/
 
             case R.id.change_pin_btn:
 //                validate user input
-                set_change_pin_txt.setText("Change your Pin");
+                //set_change_pin_txt.setText("Change your Pin");
                 validateUserInputs_change_pin();
                 break;
 
-            case R.id.change_pin_txt:
+           /* case R.id.change_pin_txt:
 //                validate user input
                 mChangePinLayout.setVisibility(View.VISIBLE);
                 mSetPinLayout.setVisibility(View.GONE);
                 mChangePinTxt.setVisibility(View.GONE);
-                break;
+                break;*/
         }
     }
 
 
-    private void validateUserInputs() {
+/*    private void validateUserInputs() {
 
-        mSetPinLayout.setVisibility(View.VISIBLE);
-        mChangePinLayout.setVisibility(View.GONE);
+        *//*mSetPinLayout.setVisibility(View.VISIBLE);
+        mChangePinLayout.setVisibility(View.GONE);*//*
 
         boolean isValid = true;
 
@@ -188,23 +198,23 @@ public class PinFragment extends Fragment implements View.OnClickListener{
             }
         }
 
-    }
+    }*/
 
     private void validateUserInputs_change_pin() {
 
         mChangePinBtn.setVisibility(View.VISIBLE);
-        mSetPinLayout.setVisibility(View.GONE);
+       // mSetPinLayout.setVisibility(View.GONE);
 
         boolean isValid = true;
 
         if (mOldPinEditxt.getText().toString().trim().length()!=4) {
-            mInputLayoutOldPin.setError("Invalid Entry !");
+            mInputLayoutOldPin.setError("Invalid Pin Entered !");
             isValid = false;
         }else if(!userPreferences.getAgentPin().equals(mOldPinEditxt.getText().toString().trim())){
             mInputLayoutOldPin.setError("Incorrect old PIN!");
             isValid = false;
-        }else if (mPinEditxt.getText().toString().trim().length() !=4) {
-            mInputLayoutNewPin.setError("Invalid Entry !");
+        }else if (mNewPinEditxt.getText().toString().trim().length() !=4) {
+            mInputLayoutNewPin.setError("Invalid Pin Entered !");
             isValid = false;
         }else {
             mInputLayoutNewPin.setErrorEnabled(false);
@@ -218,26 +228,19 @@ public class PinFragment extends Fragment implements View.OnClickListener{
             }
         }
 
-
-
-
-
     }
 
-
-
-
-    private void initFragmentSetPin() {
-        mSetPinBtn.setVisibility(View.GONE);
-        mSetPinProgressbar.setVisibility(View.VISIBLE);
+   /* private void initFragmentSetPin() {
+       *//* mSetPinBtn.setVisibility(View.GONE);
+        mSetPinProgressbar.setVisibility(View.VISIBLE);*//*
 
         UserPin userPin=new UserPin(mPinEditxt.getText().toString());
         setPin setPin=new setPin(userPin);
         sendPinData(setPin);
 
-    }
+    }*/
 
-    private void sendPinData(setPin setPin){
+   /* private void sendPinData(setPin setPin){
 
 
         //get client and call object for request
@@ -332,7 +335,7 @@ public class PinFragment extends Fragment implements View.OnClickListener{
 
 
 
-    }
+    }*/
 
 
 
@@ -340,7 +343,7 @@ public class PinFragment extends Fragment implements View.OnClickListener{
         mChangePinBtn.setVisibility(View.GONE);
         mChangePinProgressbar.setVisibility(View.VISIBLE);
 
-        UserChangePin userChangePin=new UserChangePin(mOldPinEditxt.getText().toString(),mPinEditxt.getText().toString());
+        UserChangePin userChangePin=new UserChangePin(mOldPinEditxt.getText().toString(),mNewPinEditxt.getText().toString());
         changePin changePin=new changePin(userChangePin);
         sendPinDataChangePin(changePin);
 
@@ -411,8 +414,14 @@ public class PinFragment extends Fragment implements View.OnClickListener{
                         return;
                     }
 
+
+                    userPreferences.setAgentPin(mNewPinEditxt.getText().toString().trim());
+                    mChangePinBtn.setVisibility(View.VISIBLE);
+                    mChangePinProgressbar.setVisibility(View.GONE);
                     showMessage("Pin Successfully changed");
-                    userPreferences.setAgentPin(mPinEditxt.getText().toString().trim());
+                    startActivity(new Intent(getActivity(), MainActivity.class));
+                    getActivity().finish();
+
 
 
                 }catch (Exception e){
@@ -439,7 +448,14 @@ public class PinFragment extends Fragment implements View.OnClickListener{
 
 
     private void showMessage(String s) {
-        Snackbar.make(mPINLayout, s, Snackbar.LENGTH_LONG).show();
+        Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
+    }
+
+    private void showFragment(Fragment fragment) {
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        FragmentTransaction ft = fragmentManager.beginTransaction();
+        ft.replace(R.id.fragment_container, fragment);
+        ft.commit();
     }
 
 

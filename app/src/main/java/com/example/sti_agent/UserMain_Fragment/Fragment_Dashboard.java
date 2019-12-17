@@ -241,7 +241,7 @@ public class Fragment_Dashboard extends Fragment implements BaseSliderView.OnSli
         m = new Card("Manage Policy", icons[2]);
         cardList.add(m);
 
-        m = new Card("Set/Change Wallet Pin", icons[4]);
+        m = new Card("Change Wallet Pin", icons[4]);
         cardList.add(m);
 
     }

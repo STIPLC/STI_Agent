@@ -220,6 +220,16 @@ public class AllriskFragment4 extends Fragment implements View.OnClickListener {
                                        int position, long id) {
                 String modeofPaymentTypeString = (String) parent.getItemAtPosition(position);
 
+                if(modeofPaymentTypeString.equals("PayStack")){
+                    mInputLayoutPinA4.setClickable(false);
+                    mInputLayoutPinA4.setVisibility(View.GONE);
+                }else if(modeofPaymentTypeString.equals("Wallet")){
+                    mInputLayoutPinA4.setClickable(true);
+                    mInputLayoutPinA4.setVisibility(View.VISIBLE);
+                }else{
+                    mInputLayoutPinA4.setClickable(true);
+                    mInputLayoutPinA4.setVisibility(View.VISIBLE);
+                }
 
 
             }
@@ -227,6 +237,8 @@ public class AllriskFragment4 extends Fragment implements View.OnClickListener {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 mModeOfPaymentSpinnerA4.getItemAtPosition(0);
+                mInputLayoutPinA4.setClickable(true);
+                mInputLayoutPinA4.setVisibility(View.VISIBLE);
             }
         });
 
@@ -344,13 +356,13 @@ public class AllriskFragment4 extends Fragment implements View.OnClickListener {
         if (networkConnection.isNetworkConnected(getContext())) {
             boolean isValid = true;
 
-            if (mPinTxtA4.getText().toString().isEmpty()) {
+            if (mPinTxtA4.getText().toString().isEmpty()&&mInputLayoutPinA4.isClickable()) {
                 mInputLayoutPinA4.setError("Pin is required!");
                 isValid = false;
-            }else if (mPinTxtA4.getText().toString().trim().length()!=4) {
+            }else if (mPinTxtA4.getText().toString().trim().length()!=4 && mInputLayoutPinA4.isClickable()) {
                 mInputLayoutPinA4.setError("Invalid pin entered!");
                 isValid = false;
-            } else if (!mPinTxtA4.getText().toString().trim().equals(userPreferences.getAgentPin())) {
+            } else if (!mPinTxtA4.getText().toString().trim().equals(userPreferences.getAgentPin()) && mInputLayoutPinA4.isClickable()) {
                 mInputLayoutPinA4.setError("Invalid pin entered!");
                 isValid = false;
             } else {

@@ -216,6 +216,17 @@ public class EticFragment4 extends Fragment implements View.OnClickListener {
                                        int position, long id) {
                 String modeofPaymentTypeString = (String) parent.getItemAtPosition(position);
 
+                if(modeofPaymentTypeString.equals("PayStack")){
+                    mInputLayoutPinE4.setClickable(false);
+                    mInputLayoutPinE4.setVisibility(View.GONE);
+                }else if(modeofPaymentTypeString.equals("Wallet")){
+                    mInputLayoutPinE4.setClickable(true);
+                    mInputLayoutPinE4.setVisibility(View.VISIBLE);
+                }else{
+                    mInputLayoutPinE4.setClickable(true);
+                    mInputLayoutPinE4.setVisibility(View.VISIBLE);
+                }
+
 
 
             }
@@ -223,6 +234,8 @@ public class EticFragment4 extends Fragment implements View.OnClickListener {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 mModeOfPaymentSpinnerE4.getItemAtPosition(0);
+                mInputLayoutPinE4.setClickable(true);
+                mInputLayoutPinE4.setVisibility(View.VISIBLE);
             }
         });
 
@@ -289,16 +302,16 @@ public class EticFragment4 extends Fragment implements View.OnClickListener {
         if (networkConnection.isNetworkConnected(getContext())) {
             boolean isValid = true;
 
-            if (mPinTxtE4.getText().toString().isEmpty()) {
+            if (mPinTxtE4.getText().toString().isEmpty()&&mInputLayoutPinE4.isClickable()) {
                 mInputLayoutPinE4.setError("Pin is required!");
                 isValid = false;
-            } else if (mPinTxtE4.getText().toString().trim().length()!=4) {
+            }else if (mPinTxtE4.getText().toString().trim().length()!=4 && mInputLayoutPinE4.isClickable()) {
                 mInputLayoutPinE4.setError("Invalid pin entered!");
                 isValid = false;
-            } else if (!mPinTxtE4.getText().toString().trim().equals(userPreferences.getAgentPin())) {
+            } else if (!mPinTxtE4.getText().toString().trim().equals(userPreferences.getAgentPin()) && mInputLayoutPinE4.isClickable()) {
                 mInputLayoutPinE4.setError("Invalid pin entered!");
                 isValid = false;
-            }else {
+            } else {
                 mInputLayoutPinE4.setErrorEnabled(false);
             }
             //Prefix Spinner

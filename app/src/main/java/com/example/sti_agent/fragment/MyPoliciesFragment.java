@@ -389,7 +389,8 @@ public class MyPoliciesFragment extends Fragment{
                         String v_item = response.body().getData().getPolicies().getVehicle().get(i).getPolicyNumber();
 
 
-                        if(v_item.equals(policy_num_editxt.getText().toString())) {
+                        if(v_item.toLowerCase().equals(policy_num_editxt.getText().toString()) ||
+                                v_item.equals(policy_num_editxt.getText().toString())) {
 
                             vList.add(vehicleList.get(i));
 
@@ -417,7 +418,8 @@ public class MyPoliciesFragment extends Fragment{
 
                         String s_item = response.body().getData().getPolicies().getSwiss().get(i).getPolicyNumber();
 
-                        if(s_item.equals(policy_num_editxt.getText().toString())) {
+                        if(s_item.toLowerCase().equals(policy_num_editxt.getText().toString())
+                                || s_item.equals(policy_num_editxt.getText().toString())) {
                             sList.add(swisList.get(i));
 
                         }
@@ -441,7 +443,8 @@ public class MyPoliciesFragment extends Fragment{
                         String m_item = response.body().getData().getPolicies().getMarine().get(i).getPolicyNumber();
                         // String lastname = response.body().getData().get(i).getLastName();
 
-                       if(m_item.equals(policy_num_editxt.getText().toString())) {
+                       if(m_item.toLowerCase().equals(policy_num_editxt.getText().toString())
+                               || m_item.equals(policy_num_editxt.getText().toString())) {
 
                             mList.add(marineList.get(i));
 
@@ -466,7 +469,8 @@ public class MyPoliciesFragment extends Fragment{
 
                         String a_item = response.body().getData().getPolicies().getAllRisk().get(i).getPolicyNumber();
 
-                       if(a_item.equals(policy_num_editxt.getText().toString())) {
+                       if(a_item.toLowerCase().equals(policy_num_editxt.getText().toString())
+                               || a_item.equals(policy_num_editxt.getText().toString())) {
 
                             aList.add(allRiskList.get(i));
 
@@ -491,7 +495,8 @@ public class MyPoliciesFragment extends Fragment{
                         String t_item = response.body().getData().getPolicies().getTravel().get(i).getPolicyNumber();
 
 
-                      if(t_item.equals(policy_num_editxt.getText().toString())) {
+                      if(t_item.toLowerCase().equals(policy_num_editxt.getText().toString()) ||
+                              t_item.equals(policy_num_editxt.getText().toString())) {
 
                             tList.add(travelList.get(i));
 

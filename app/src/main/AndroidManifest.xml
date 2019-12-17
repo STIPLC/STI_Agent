@@ -100,20 +100,25 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".ForgetPassword" />
         <activity android:name=".SignIn" />
-        <activity android:name=".Forms.MotorInsuredForm" />
-        <activity android:name=".Forms.EticForm" />
-        <activity android:name=".Forms.MarineForm" />
-        <activity android:name=".Forms.AllRiskForm" />
-        <activity android:name=".Forms.SwissForm" />
+        <activity android:name=".Forms.MotorInsuredForm"
+            />
+        <activity android:name=".Forms.EticForm"
+          />
+        <activity android:name=".Forms.MarineForm"
+           />
+        <activity android:name=".Forms.AllRiskForm"
+             />
+        <activity android:name=".Forms.SwissForm"
+             />
         <activity android:name=".Forms.TrackClaim" />
         <activity android:name=".Forms.Claim" />
        <!-- <activity android:name=".Import.ImportingForm" />-->
         <activity
             android:name=".operation_activity.PolicyPaymentActivity"
-            android:parentActivityName=".MainActivity" />
+             />
         <activity
             android:name=".operation_activity.WalletPaymentActivity"
-            android:parentActivityName=".MainActivity" />
+            />
         <activity android:name=".Detail_activities.MyClaimsDetail" />
         <activity android:name=".Detail_activities.MyAllRiskDetail"
             />

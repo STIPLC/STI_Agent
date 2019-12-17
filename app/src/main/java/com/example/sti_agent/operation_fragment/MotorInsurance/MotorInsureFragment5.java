@@ -223,6 +223,17 @@ public class MotorInsureFragment5 extends Fragment implements View.OnClickListen
                                        int position, long id) {
                 String modeofPaymentTypeString = (String) parent.getItemAtPosition(position);
 
+                if(modeofPaymentTypeString.equals("PayStack")){
+                    inputLayoutPin_m5.setClickable(false);
+                    inputLayoutPin_m5.setVisibility(View.GONE);
+                }else if(modeofPaymentTypeString.equals("Wallet")){
+                    inputLayoutPin_m5.setClickable(true);
+                    inputLayoutPin_m5.setVisibility(View.VISIBLE);
+                }else{
+                    inputLayoutPin_m5.setClickable(true);
+                    inputLayoutPin_m5.setVisibility(View.VISIBLE);
+                }
+
 
 
             }
@@ -230,6 +241,8 @@ public class MotorInsureFragment5 extends Fragment implements View.OnClickListen
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 modeOfPayment_spinner_m5.getItemAtPosition(0);
+                inputLayoutPin_m5.setClickable(true);
+                inputLayoutPin_m5.setVisibility(View.VISIBLE);
             }
         });
 
@@ -271,9 +284,6 @@ public class MotorInsureFragment5 extends Fragment implements View.OnClickListen
             personal_info.setText(individual);
 
         }
-
-
-
 
     }
 
@@ -364,13 +374,13 @@ public class MotorInsureFragment5 extends Fragment implements View.OnClickListen
         if (networkConnection.isNetworkConnected(getContext())) {
             boolean isValid = true;
 
-            if (pin_txt_m5.getText().toString().isEmpty()) {
+            if (pin_txt_m5.getText().toString().isEmpty()&&inputLayoutPin_m5.isClickable()) {
                 inputLayoutPin_m5.setError("Pin is required!");
                 isValid = false;
-            }else if (pin_txt_m5.getText().toString().trim().length()!=4) {
+            }else if (pin_txt_m5.getText().toString().trim().length()!=4 && inputLayoutPin_m5.isClickable()) {
                 inputLayoutPin_m5.setError("Invalid pin entered!");
                 isValid = false;
-            } else if (!pin_txt_m5.getText().toString().trim().equals(userPreferences.getAgentPin())) {
+            } else if (!pin_txt_m5.getText().toString().trim().equals(userPreferences.getAgentPin()) && inputLayoutPin_m5.isClickable()) {
                 inputLayoutPin_m5.setError("Invalid pin entered!");
                 isValid = false;
             } else {

@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.sti_agent.Model.Errors.APIError;
 import com.example.sti_agent.Model.Errors.ErrorUtils;
@@ -313,12 +314,9 @@ public class ForgetPassword extends AppCompatActivity implements View.OnClickLis
                         return;
                     }
 
-
-
-
-                    showMessage("Successfully changed password");
                     startActivity(new Intent(ForgetPassword.this,SignIn.class));
 
+                    showMessage("Successfully changed password");
 
                 } catch (Exception e) {
                     showMessage("Login Failed: " + e.getMessage());
@@ -357,6 +355,6 @@ public class ForgetPassword extends AppCompatActivity implements View.OnClickLis
     }
 
     private void showMessage(String s) {
-        Snackbar.make(mLayoutForgetPass, s, Snackbar.LENGTH_LONG).show();
+        Toast.makeText(this, s, Toast.LENGTH_LONG).show();
     }
 }

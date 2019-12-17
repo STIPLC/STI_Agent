@@ -122,27 +122,6 @@
                             />
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/inputLayoutOfficeAddr"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:visibility="gone"
-                        android:clickable="false"
-                        >
-
-                        <EditText
-                            android:id="@+id/office_addr_editxt"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/size_three"
-                            android:background="@drawable/rounded_bg"
-                            android:hint="Office Address* (required)"
-                            android:importantForAutofill="noExcludeDescendants"
-                            android:inputType="text"
-                            android:padding="@dimen/size_ten"
-                            tools:targetApi="o"
-                            />
-                    </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/inputLayoutContactPerson"
@@ -221,6 +200,29 @@
                         android:background="@drawable/spinner_bg"
                         android:clickable="false"
                         />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutOfficeAddr"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone"
+                        android:clickable="false"
+                        >
+
+                        <EditText
+                            android:id="@+id/office_addr_editxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_three"
+                            android:background="@drawable/rounded_bg"
+                            android:hint="Office Address* (required)"
+                            android:importantForAutofill="noExcludeDescendants"
+                            android:inputType="text"
+                            android:padding="@dimen/size_ten"
+                            tools:targetApi="o"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/inputLayoutResAddr"

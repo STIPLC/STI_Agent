@@ -572,9 +572,7 @@ public class MotorInsureFragment2 extends Fragment implements View.OnClickListen
 
             case R.id.v_back_btn1:
                 //do to previous fragment
-                if (currentStep > 0) {
-                    currentStep--;
-                }
+
                 stepView.done(false);
                 stepView.go(currentStep, true);
 
@@ -582,6 +580,11 @@ public class MotorInsureFragment2 extends Fragment implements View.OnClickListen
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_motor_form_container, quoteBuyFragment1);
                 ft.commit();
+
+                if (currentStep > 0) {
+                    currentStep--;
+                }
+
 
                 break;
         }

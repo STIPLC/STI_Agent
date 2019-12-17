@@ -1,5 +1,6 @@
 package com.example.sti_agent.UserMain_Fragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -10,15 +11,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.sti_agent.Constant;
+import com.example.sti_agent.MainActivity;
+import com.example.sti_agent.Model.Auth.ChangePassPost;
+import com.example.sti_agent.Model.Auth.UserPassword;
 import com.example.sti_agent.Model.Errors.APIError;
 import com.example.sti_agent.Model.Errors.ErrorUtils;
+import com.example.sti_agent.Model.Pin.UserPin;
+import com.example.sti_agent.Model.Pin.setPin;
 import com.example.sti_agent.Model.ServiceGenerator;
 import com.example.sti_agent.Model.WalletModel.FundWallet;
 import com.example.sti_agent.Model.WalletModel.GetWalletFunded;
@@ -36,6 +44,7 @@ import com.wang.avi.AVLoadingIndicatorView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -58,6 +67,18 @@ public class Fragment_FundWallet extends Fragment {
     TextInputLayout inputLayoutDescriptn;
     @BindView(R.id.desc_editxt)
     EditText descEditxt;
+
+    @BindView(R.id.inputLayoutPin)
+    TextInputLayout inputLayoutPin;
+    @BindView(R.id.pin_editxt)
+    EditText pinEditText;
+
+    @BindView(R.id.set_pin_txt)
+    TextView set_pin_txt;
+
+    @BindView(R.id.reset_pin_txt)
+    TextView reset_pin_txt;
+
     @BindView(R.id.fund_btn)
     Button fundBtn;
     @BindView(R.id.fund_layout)
@@ -99,6 +120,24 @@ public class Fragment_FundWallet extends Fragment {
         View view=inflater.inflate(R.layout.fragment_fundwallet, container, false);
         ButterKnife.bind(this,view);
         userPreferences=new UserPreferences(getContext());
+        reset_pin_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        set_pin_txt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(userPreferences.getAgentPin().trim().length()!=4) {
+                    pinAlert();
+                }else{
+                    showMessage("You have a pin");
+                }
+            }
+        });
+
         fundBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,9 +161,13 @@ public class Fragment_FundWallet extends Fragment {
             } else if (descEditxt.getText().toString().isEmpty()) {
                 inputLayoutDescriptn.setError("Description is required!");
                 isValid = false;
-            } else {
+            }  else if (pinEditText.getText().toString().length() !=4 || !pinEditText.getText().toString().equals(userPreferences.getAgentPin())) {
+                inputLayoutPin.setError("Incorrect pin entered!");
+                isValid = false;
+            }else {
                 inputLayoutAmount.setErrorEnabled(false);
                 inputLayoutDescriptn.setErrorEnabled(false);
+                inputLayoutPin.setErrorEnabled(false);
             }
 
             if (isValid) {
@@ -146,6 +189,116 @@ public class Fragment_FundWallet extends Fragment {
         intent.putExtra(Constant.WALLET_DESC, desc);
         startActivity(intent);
         getActivity().finish();
+    }
+
+    private void pinAlert() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setTitle("Set Wallet Pin");
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.change_pass, null);
+        builder.setView(dialogView);
+        EditText oldPassword = dialogView.findViewById(R.id.oldpass);
+        EditText newPassword = dialogView.findViewById(R.id.newpass);
+        AVLoadingIndicatorView progressBar = dialogView.findViewById(R.id.progressbar);
+
+        builder.setPositiveButton("Set Pin", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+                if (oldPassword.getText().toString().isEmpty() || oldPassword.getText().toString().trim().length() != 4) {
+                    showMessage("Invalid pin! ensure it 4 digit");
+                    return;
+                } else if (newPassword.getText().toString().isEmpty() || newPassword.getText().toString().trim().length() != 4) {
+                    showMessage("Invalid pin! ensure it 4 digit");
+                    return;
+                }
+
+                progressBar.setVisibility(View.VISIBLE);
+
+                UserPin userPin=new UserPin(newPassword.getText().toString().trim());
+                setPin setPin=new setPin(userPin);
+
+                //change_password(changePassPost);
+                Call<ResponseBody> call = client.set_pin("Token " + userPreferences.getUserToken(), setPin);
+
+                call.enqueue(new Callback<ResponseBody>() {
+                    @Override
+                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+
+                        Log.i("ResponseCode", String.valueOf(response.code()));
+                        if(response.code()==406){
+                            showMessage("Error! Wrong pin type provided!");
+                            return;
+                        }
+
+                        if(response.code()==400){
+                            showMessage("Check your internet connection");
+                            return;
+
+                        }else if(response.code()==429){
+                            showMessage("Too many requests on database");
+                            return;
+                        }else if(response.code()==500){
+                            showMessage("Server Error");
+                            return;
+                        }else if(response.code()==401){
+                            showMessage("Unauthorized access, please try login again");
+                            return;
+                        }
+
+                        if (!response.isSuccessful()) {
+
+                            try {
+                                APIError apiError = ErrorUtils.parseError(response);
+
+                                showMessage("Invalid Entry: " + apiError.getErrors());
+                                Log.i("Invalid EntryK", apiError.getErrors().toString());
+                                Log.i("Invalid Entry", response.errorBody().toString());
+
+                            } catch (Exception e) {
+                                Log.i("InvalidEntry", e.getMessage());
+
+                                showMessage("Invalid Entry");
+
+
+                            }
+                            progressBar.setVisibility(View.GONE);
+                            return;
+                        }
+
+                        userPreferences.setAgentPin(newPassword.getText().toString().trim());
+                        progressBar.setVisibility(View.GONE);
+                        dialog.dismiss();
+
+                        showMessage("Pin Successfully set");
+
+
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResponseBody> call, Throwable t) {
+                        showMessage("Login Failed " + t.getMessage());
+                        Log.i("GEtError", t.getMessage());
+                        //progressBar.setVisibility(View.GONE);
+                    }
+                });
+
+
+            }
+        });
+
+
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.create().show();
+
     }
 
 

@@ -29,7 +29,10 @@
         android:layout_marginBottom="@dimen/size_twelve"
         android:layout_gravity="center"
         >
-
+        <ScrollView
+            android:layout_width="match_parent"
+            android:scrollbars="vertical"
+            android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -128,7 +131,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:drawableEnd="@drawable/ic_email_black_24dp"
-                    android:hint="New Password"
+                    android:hint="Confirm Password"
                     android:drawableTint="@color/colorPrimary"
                     android:inputType="textPassword"
                     android:fontFamily="@font/montserrat_regular"
@@ -194,6 +197,8 @@
                 />-->
 
         </LinearLayout>
+
+        </ScrollView>
 
 
 

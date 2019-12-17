@@ -180,9 +180,7 @@ public class EticFragment3 extends Fragment implements View.OnClickListener{
                 break;
 
             case R.id.v_back_btn3_e3:
-                if (currentStep > 0) {
-                    currentStep--;
-                }
+
                 mStepView.done(false);
                 mStepView.go(currentStep, true);
                 userPreferences.setTempEticQuotePrice("0.0");
@@ -190,6 +188,10 @@ public class EticFragment3 extends Fragment implements View.OnClickListener{
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.fragment_etic_form_container, eticFragment2);
                 ft.commit();
+
+                if (currentStep > 0) {
+                    currentStep--;
+                }
 
                 break;
         }

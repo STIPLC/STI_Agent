@@ -219,7 +219,17 @@ public class SwissFragment4 extends Fragment implements View.OnClickListener {
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
                 String modeofPaymentTypeString = (String) parent.getItemAtPosition(position);
-
+                
+                if(modeofPaymentTypeString.equals("PayStack")){
+                    inputLayoutPin_s4.setClickable(false);
+                    inputLayoutPin_s4.setVisibility(View.GONE);
+                }else if(modeofPaymentTypeString.equals("Wallet")){
+                    inputLayoutPin_s4.setClickable(true);
+                    inputLayoutPin_s4.setVisibility(View.VISIBLE);
+                }else{
+                    inputLayoutPin_s4.setClickable(true);
+                    inputLayoutPin_s4.setVisibility(View.VISIBLE);
+                }
 
 
             }
@@ -227,6 +237,8 @@ public class SwissFragment4 extends Fragment implements View.OnClickListener {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 modeOfPayment_spinner_s4.getItemAtPosition(0);
+                inputLayoutPin_s4.setClickable(true);
+                inputLayoutPin_s4.setVisibility(View.VISIBLE);
             }
         });
 
@@ -334,16 +346,16 @@ public class SwissFragment4 extends Fragment implements View.OnClickListener {
         if (networkConnection.isNetworkConnected(getContext())) {
             boolean isValid = true;
 
-            if (pin_txt_s4.getText().toString().isEmpty()) {
+            if (pin_txt_s4.getText().toString().isEmpty()&&inputLayoutPin_s4.isClickable()) {
                 inputLayoutPin_s4.setError("Pin is required!");
                 isValid = false;
-            } else if (pin_txt_s4.getText().toString().trim().length()!=4) {
+            }else if (pin_txt_s4.getText().toString().trim().length()!=4 && inputLayoutPin_s4.isClickable()) {
                 inputLayoutPin_s4.setError("Invalid pin entered!");
                 isValid = false;
-            } else if (!pin_txt_s4.getText().toString().trim().equals(userPreferences.getAgentPin())) {
+            } else if (!pin_txt_s4.getText().toString().trim().equals(userPreferences.getAgentPin()) && inputLayoutPin_s4.isClickable()) {
                 inputLayoutPin_s4.setError("Invalid pin entered!");
                 isValid = false;
-            }else {
+            } else {
                 inputLayoutPin_s4.setErrorEnabled(false);
             }
             //mode of payment

@@ -77,6 +77,10 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
     FrameLayout mQbFormLayout1;
     @BindView(R.id.step_view)
     StepView mStepView;
+
+    @BindView(R.id.start_date)
+    EditText start_date;
+
     @BindView(R.id.prefix_spinner_s)
     Spinner mPrefixSpinnerS;
 
@@ -139,8 +143,9 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
     AVLoadingIndicatorView mProgressbar1S1;
    
 
-    String maritalString,genderString,prifixString,benefitString,DobString,cameraFilePath,stateString;
+    String maritalString,genderString,prifixString,benefitString,DobString,cameraFilePath,stateString,startDateStrg;
     DatePickerDialog datePickerDialog1;
+    DatePickerDialog datePickerDialogStartDate;
     private int currentStep = 0;
     int benefit_count = 0;
 
@@ -209,6 +214,7 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
         benfitSpinner();
         setViewActions();
         showDatePicker();
+        showStarteDatePicker();
         stateSpinner();
 
         return  view;
@@ -417,6 +423,7 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
         mUploadPassportBtnS1.setOnClickListener(this);
         mDobEditxtS.setOnClickListener(this);
         mNextBtn1S1.setOnClickListener(this);
+        start_date.setOnClickListener(this);
     }
 
     @Override
@@ -454,6 +461,11 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
             case R.id.dob_editxt_s:
                 datePickerDialog1.show();
                 break;
+
+            case R.id.start_date:
+                datePickerDialogStartDate.show();
+                break;
+
 
             case R.id.next_btn1_s1:
 //                validate user input
@@ -738,6 +750,11 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
                 showMessage("Date of Birth is required");
                 isValid = false;
             }
+
+        if (start_date.getText().toString().isEmpty()) {
+            showMessage("Start Date is required");
+            isValid = false;
+        }
             if (mDisabiltyEditxtS1.getText().toString().isEmpty()) {
                 mInputLayoutDisabilityS1.setError("If No, Enter No");
                 isValid = false;
@@ -779,8 +796,8 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
             }
 
             benefitString = mBenefitSpinnerS.getSelectedItem().toString();
-        if (benefitString.equals("Select Benefit Category*")) {
-                showMessage("Don't forget to Select Benefit Category");
+        if (benefitString.equals("Select Benefit Category")) {
+                showMessage("Benefit Category is required !");
                 isValid = false;
             }
 
@@ -865,6 +882,45 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
                 DobString = year + "-" + monthofYear + "-" + dayOfMonth;
                 mDobEditxtS.setText(DobString);
                 datePickerDialog1.dismiss();
+            }
+        }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+    }
+
+
+    private void showStarteDatePicker() {
+        //Get current date
+        Calendar calendar = Calendar.getInstance();
+
+        //Create datePickerDialog with initial date which is current and decide what happens when a date is selected.
+        datePickerDialogStartDate = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                //When a date is selected, it comes here.
+                //Change birthdayEdittext's text and dismiss dialog.
+                if(year<calendar.get(Calendar.YEAR) ){
+                    showMessage("Invalid Start Date");
+                    datePickerDialogStartDate.dismiss();
+                    start_date.setText("");
+                    Log.i("Calendar", year + " " + calendar.get(Calendar.YEAR));
+
+                }else if( monthOfYear+1<calendar.get(Calendar.MONTH) ) {
+                    showMessage("Invalid Start Date");
+                    datePickerDialogStartDate.dismiss();
+                    start_date.setText("");
+                    Log.i("Calendar", monthOfYear+1 + " " + calendar.get(Calendar.MONTH));
+
+                }else if(dayOfMonth<calendar.get(Calendar.DAY_OF_MONTH)) {
+                    showMessage("Invalid Start Date");
+                    datePickerDialogStartDate.dismiss();
+                    start_date.setText("");
+                    Log.i("Calendar", dayOfMonth + " " + calendar.get(Calendar.DAY_OF_MONTH));
+
+                }else {
+                    int monthofYear = monthOfYear + 1;
+                    startDateStrg = year + "-" + monthofYear + "-" + dayOfMonth;
+                    start_date.setText(startDateStrg);
+                    datePickerDialogStartDate.dismiss();
+                }
             }
         }, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
     }

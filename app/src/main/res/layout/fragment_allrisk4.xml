@@ -117,28 +117,7 @@
 
                     </androidx.cardview.widget.CardView>
 
-                      <com.google.android.material.textfield.TextInputLayout
-                          android:id="@+id/inputLayoutPin_a4"
-                          android:layout_width="match_parent"
-                          android:layout_height="match_parent"
-                          android:layout_marginBottom="2dp"
-                          android:visibility="visible"
-                          >
 
-                          <EditText
-                              android:id="@+id/pin_txt_a4"
-                              android:layout_width="match_parent"
-                              android:layout_height="wrap_content"
-                              android:layout_marginTop="@dimen/size_three"
-                              android:maxLength="4"
-                              android:background="@drawable/rounded_bg"
-                              android:hint="Pin"
-                              android:importantForAutofill="noExcludeDescendants"
-                              android:inputType="number"
-                              android:padding="@dimen/size_ten"
-                              tools:targetApi="o"
-                              />
-                      </com.google.android.material.textfield.TextInputLayout>
                     <Spinner
                         android:id="@+id/modeOfPayment_spinner_a4"
                         android:layout_width="match_parent"
@@ -148,6 +127,28 @@
                         android:visibility="visible"
                         />
 
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/inputLayoutPin_a4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="2dp"
+                        android:visibility="visible"
+                        >
+
+                        <EditText
+                            android:id="@+id/pin_txt_a4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/size_three"
+                            android:maxLength="4"
+                            android:background="@drawable/rounded_bg"
+                            android:hint="Pin"
+                            android:importantForAutofill="noExcludeDescendants"
+                            android:inputType="number"
+                            android:padding="@dimen/size_ten"
+                            tools:targetApi="o"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
 
 
                     <LinearLayout

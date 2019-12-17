@@ -645,7 +645,7 @@ public class SwissFragment2 extends Fragment implements View.OnClickListener{
         //Private Spinner
         benefitString = mBenefitSpinnerS2.getSelectedItem().toString();
         if (benefitString.equals("Select Benefit Category")) {
-            showMessage("Don't forget to Select Benefit Category");
+            showMessage("Benefit Category is required !");
             isValid = false;
         }
 

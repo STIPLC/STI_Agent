@@ -119,12 +119,24 @@
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
 
+
+                    <Spinner
+                        android:id="@+id/modeOfPayment_spinner_m5"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="@dimen/size_three"
+                        android:background="@drawable/spinner_bg"
+                        android:visibility="visible"
+                        />
+
+
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/inputLayoutPin_m5"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:visibility="visible"
                         android:layout_marginBottom="2dp"
+                        android:clickable="true"
                         >
 
                         <EditText
@@ -141,17 +153,6 @@
                             tools:targetApi="o"
                             />
                     </com.google.android.material.textfield.TextInputLayout>
-                    <Spinner
-                        android:id="@+id/modeOfPayment_spinner_m5"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginTop="@dimen/size_three"
-                        android:background="@drawable/spinner_bg"
-                        android:visibility="visible"
-                        />
-
-
-
 
 
                     <LinearLayout
