@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.sti_agent">
+    package="com.sti.sti_agent">
 
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -21,7 +21,7 @@
         android:required="true" />
 
     <application
-        android:name=".BaseApplication"
+        android:name="com.sti.sti_agent.BaseApplication"
         android:allowBackup="true"
         android:icon="@drawable/sti_logo_dark"
         android:label="STI Agent"
@@ -45,7 +45,7 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".LocateUs"
+            android:name="com.sti.sti_agent.LocateUs"
             android:label="@string/title_activity_locate_us" />
 
 
@@ -56,7 +56,7 @@
 
 
         <activity
-            android:name=".Splash"
+            android:name="com.sti.sti_agent.Splash"
             android:theme="@style/AppThemeSuper">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -64,9 +64,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUp" />
+        <activity android:name="com.sti.sti_agent.SignUp" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.sti.sti_agent.MainActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -81,60 +81,60 @@
         -->
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+            android:value="com.sti.sti_agent.MainActivity" />
 
         <activity
-            android:name=".operation_activity.CustomerManageActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.sti.sti_agent.operation_activity.CustomerManageActivity"
+            android:parentActivityName="com.sti.sti_agent.MainActivity" />
         <activity
-            android:name=".operation_activity.MakeClaimActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.sti.sti_agent.operation_activity.MakeClaimActivity"
+            android:parentActivityName="com.sti.sti_agent.MainActivity" />
         <activity
-            android:name=".operation_activity.PolicyRenewalActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.sti.sti_agent.operation_activity.PolicyRenewalActivity"
+            android:parentActivityName="com.sti.sti_agent.MainActivity" />
         <activity
-            android:name=".operation_activity.QuoteBuyActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.sti.sti_agent.operation_activity.QuoteBuyActivity"
+            android:parentActivityName="com.sti.sti_agent.MainActivity" />
         <activity
-            android:name=".operation_activity.RegisterCustomerActivity"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".ForgetPassword" />
-        <activity android:name=".SignIn" />
-        <activity android:name=".Forms.MotorInsuredForm"
+            android:name="com.sti.sti_agent.operation_activity.RegisterCustomerActivity"
+            android:parentActivityName="com.sti.sti_agent.MainActivity" />
+        <activity android:name="com.sti.sti_agent.ForgetPassword" />
+        <activity android:name="com.sti.sti_agent.SignIn" />
+        <activity android:name="com.sti.sti_agent.Forms.MotorInsuredForm"
             />
-        <activity android:name=".Forms.EticForm"
+        <activity android:name="com.sti.sti_agent.Forms.EticForm"
           />
-        <activity android:name=".Forms.MarineForm"
+        <activity android:name="com.sti.sti_agent.Forms.MarineForm"
            />
-        <activity android:name=".Forms.AllRiskForm"
+        <activity android:name="com.sti.sti_agent.Forms.AllRiskForm"
              />
-        <activity android:name=".Forms.SwissForm"
+        <activity android:name="com.sti.sti_agent.Forms.SwissForm"
              />
-        <activity android:name=".Forms.TrackClaim" />
-        <activity android:name=".Forms.Claim" />
+        <activity android:name="com.sti.sti_agent.Forms.TrackClaim" />
+        <activity android:name="com.sti.sti_agent.Forms.Claim" />
        <!-- <activity android:name=".Import.ImportingForm" />-->
         <activity
-            android:name=".operation_activity.PolicyPaymentActivity"
+            android:name="com.sti.sti_agent.operation_activity.PolicyPaymentActivity"
              />
         <activity
-            android:name=".operation_activity.WalletPaymentActivity"
+            android:name="com.sti.sti_agent.operation_activity.WalletPaymentActivity"
             />
-        <activity android:name=".Detail_activities.MyClaimsDetail" />
-        <activity android:name=".Detail_activities.MyAllRiskDetail"
+        <activity android:name="com.sti.sti_agent.Detail_activities.MyClaimsDetail" />
+        <activity android:name="com.sti.sti_agent.Detail_activities.MyAllRiskDetail"
             />
-        <activity android:name=".Detail_activities.MyEticDetail" />
-        <activity android:name=".Detail_activities.MySwissDetail" />
+        <activity android:name="com.sti.sti_agent.Detail_activities.MyEticDetail" />
+        <activity android:name="com.sti.sti_agent.Detail_activities.MySwissDetail" />
         <activity
-            android:name=".Forms.ManagePolicy"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.sti.sti_agent.Forms.ManagePolicy"
+            android:parentActivityName="com.sti.sti_agent.MainActivity" />
         <activity
-            android:name=".Forms.ClaimList"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".Detail_activities.MyVehicleDetail" />
-        <activity android:name=".Detail_activities.MyCustomerDetail"
+            android:name="com.sti.sti_agent.Forms.ClaimList"
+            android:parentActivityName="com.sti.sti_agent.MainActivity" />
+        <activity android:name="com.sti.sti_agent.Detail_activities.MyVehicleDetail" />
+        <activity android:name="com.sti.sti_agent.Detail_activities.MyCustomerDetail"
         />
-        <activity android:name=".operation_activity.PolicyWalletPayActivity" />
-        <activity android:name=".operation_activity.PinActivity" />
+        <activity android:name="com.sti.sti_agent.operation_activity.PolicyWalletPayActivity" />
+        <activity android:name="com.sti.sti_agent.operation_activity.PinActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

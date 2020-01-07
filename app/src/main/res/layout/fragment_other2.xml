@@ -6,7 +6,7 @@
     android:background="#f1f1f1"
     android:padding="@dimen/size_ten"
     android:id="@+id/qb_form_layout2"
-    tools:context="com.example.sti_agent.operation_fragment.OtherInsurance.OtherInsureFragment2">
+    tools:context="com.sti.sti_agent.operation_fragment.OtherInsurance.OtherInsureFragment2">
 
     <!-- TODO: Update blank fragment layout -->
     <RelativeLayout

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/pin_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.sti_agent.operation_fragment.Pin.PinFragment">
+    tools:context="com.sti.sti_agent.operation_fragment.Pin.PinFragment">
 
 
     <LinearLayout
