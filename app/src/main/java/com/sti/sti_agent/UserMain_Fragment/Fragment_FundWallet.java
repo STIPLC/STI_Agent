@@ -120,10 +120,11 @@ public class Fragment_FundWallet extends Fragment {
         set_pin_txt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(userPreferences.getAgentPin().trim().length()!=4) {
+                if(userPreferences.getAgentPin().trim().length()!=4||userPreferences.getAgentPin()!=null) {
                     pinAlert();
                 }else{
                     showMessage("You have a pin");
+                    Log.i("YourPin",userPreferences.getAgentPin());
                 }
             }
         });

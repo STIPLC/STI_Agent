@@ -218,8 +218,8 @@ public class ProfileFragment extends Fragment {
 
 
                             String imageId = MediaManager.get().upload(Uri.parse(profile_photo_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/user_passport" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/passport" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -292,7 +292,7 @@ public class ProfileFragment extends Fragment {
 
                             String imageId = MediaManager.get().upload(Uri.parse(profile_photo_img_uri.toString()))
                                     .option("public_id", "user_registration/profile_photos/user_passport" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here

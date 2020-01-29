@@ -1041,8 +1041,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                             user_img.setImageBitmap(MediaStore.Images.Media.getBitmap(this.getContentResolver(), passportUri));
 
                             String requestId = MediaManager.get().upload(Uri.parse(passportUri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/user_passport" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/passport" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -1119,8 +1119,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                         // user_img.setImageURI(passportUri);
 
                         String requestId = MediaManager.get().upload(Uri.parse(cameraFilePath))
-                                .option("public_id", "user_registration/profile_photos/user_passport" + name)
-                                .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                .option("public_id", "agent_registration/agent_files/passport" + name)
+                                .unsigned("z2uab1xl").callback(new UploadCallback() {
                                     @Override
                                     public void onStart(String requestId) {
                                         // your code here
@@ -1186,8 +1186,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     } else {
 
                         String frontId = MediaManager.get().upload(Uri.parse(uploadFront_uri.toString()))
-                                .option("public_id", "user_registration/other_files/user_id_front" + name)
-                                .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                .option("public_id", "agent_registration/agent_files/user_id_front" + name)
+                                .unsigned("z2uab1xl").callback(new UploadCallback() {
                                     @Override
                                     public void onStart(String requestId) {
                                         // your code here
@@ -1252,8 +1252,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     } else {
 
                         String frontId = MediaManager.get().upload(uploadFront_uri)
-                                .option("public_id", "user_registration/other_files/user_id_front" + name)
-                                .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                .option("public_id", "agent_registration/agent_files/user_id_front" + name)
+                                .unsigned("z2uab1xl").callback(new UploadCallback() {
                                     @Override
                                     public void onStart(String requestId) {
                                         // your code here
@@ -1319,8 +1319,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     if (uploadBack_uri != null) {
 
                         String frontId = MediaManager.get().upload(Uri.parse(uploadBack_uri.toString()))
-                                .option("public_id", "user_registration/other_files/user_id_back" + name)
-                                .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                .option("public_id", "agent_registration/agent_files/user_id_back" + name)
+                                .unsigned("z2uab1xl").callback(new UploadCallback() {
                                     @Override
                                     public void onStart(String requestId) {
                                         // your code here
@@ -1384,8 +1384,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     if (uploadBack_uri != null) {
 
                         String frontId = MediaManager.get().upload(uploadBack_uri)
-                                .option("public_id", "user_registration/other_files/user_id_back" + name)
-                                .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                .option("public_id", "agent_registration/agent_files/user_id_back" + name)
+                                .unsigned("z2uab1xl").callback(new UploadCallback() {
                                     @Override
                                     public void onStart(String requestId) {
                                         // your code here
@@ -1448,8 +1448,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     if (uploadFile_uri != null) {
 
                         String licenseFile = MediaManager.get().upload(Uri.parse(uploadFile_uri.toString()))
-                                .option("public_id", "user_registration/other_files/licensefile" + name)
-                                .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                .option("public_id", "agent_registration/agent_files/licensefile" + name)
+                                .unsigned("z2uab1xl").callback(new UploadCallback() {
                                     @Override
                                     public void onStart(String requestId) {
                                         // your code here
@@ -1512,8 +1512,8 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     if (uploadFile_uri != null) {
 
                         String licenseFile = MediaManager.get().upload(uploadFile_uri)
-                                .option("public_id", "user_registration/other_files/licensefile" + name)
-                                .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                .option("public_id", "agent_registration/agent_files/licensefile" + name)
+                                .unsigned("z2uab1xl").callback(new UploadCallback() {
                                     @Override
                                     public void onStart(String requestId) {
                                         // your code here

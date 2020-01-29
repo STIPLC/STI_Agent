@@ -541,8 +541,8 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(personal_info_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/user_passport" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -613,8 +613,8 @@ public class SwissFragment1 extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(personal_info_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/user_passport" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here

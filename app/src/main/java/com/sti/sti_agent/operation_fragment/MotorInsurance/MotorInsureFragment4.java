@@ -352,8 +352,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(frontview_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -428,8 +428,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(frontview_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -504,8 +504,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(backview_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -580,8 +580,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(backview_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -656,8 +656,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(rightview_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -732,8 +732,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(rightview_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -808,8 +808,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(leftview_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -884,8 +884,8 @@ public class MotorInsureFragment4 extends Fragment implements View.OnClickListen
                         } else {
 
                             String imageId = MediaManager.get().upload(leftview_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/policy_files/vehicle_img/img" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here

@@ -30,10 +30,10 @@ public class BaseApplication extends Application {
 
         PaystackSdk.initialize(getApplicationContext());
         Map configCloudinary = new HashMap();
-        configCloudinary.put("cloud_name", "aaua");
-        configCloudinary.put("api_key", "942621547178879");
-        configCloudinary.put("api_secret", "3a6roBjSSgD0ulmK41kBczTu_VE");
-        configCloudinary.put("upload_preset", "xbiscrhh");
+        configCloudinary.put("cloud_name", "stiplc");
+        configCloudinary.put("api_key", "568485972771544");
+        configCloudinary.put("api_secret", "uQSxwMqLY0c5Kd3JSjHCB8I9M90");
+        configCloudinary.put("upload_preset", "z2uab1xl");
         MediaManager.init(this, configCloudinary);
 
 

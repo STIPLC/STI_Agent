@@ -65,6 +65,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
     MaterialCardView a_card;
 
     UserPreferences userPreferences;
+    PermissionCheckClass mPermissionCheckClass;
 
 
     String agent_email="";
@@ -87,6 +88,12 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener{
         mForgotPass.setOnClickListener(this);
         a_card.setOnClickListener(this);
         b_card.setOnClickListener(this);
+
+
+        mPermissionCheckClass = new PermissionCheckClass(this);
+        if (!mPermissionCheckClass.checkPermission()){
+            mPermissionCheckClass.requestPermission();
+        }
     }
 
     private void setUp(){

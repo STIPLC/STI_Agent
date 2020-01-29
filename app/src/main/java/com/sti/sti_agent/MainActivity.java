@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
    /* @BindView(R.id.message)
     TextView mTextMessage;*/
 
-    PermissionCheckClass mPermissionCheckClass;
+
     Fragment fragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -107,10 +107,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         userPreferences = new UserPreferences(this);
 
-        mPermissionCheckClass = new PermissionCheckClass(this);
-        if (!mPermissionCheckClass.checkPermission()){
-            mPermissionCheckClass.requestPermission();
-        }
+
 
         applyToolbar("Dashboard", "We got you covered");
 

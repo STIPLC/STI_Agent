@@ -52,7 +52,7 @@
 
         <meta-data
             android:name="co.paystack.android.PublicKey"
-            android:value="pk_test_d0ca9d91eeee10ecba75c648e988170b29d0978e" />
+            android:value="pk_live_fb910afc310835ca10c26860ba9a2de51d1cbebb" />
 
 
         <activity

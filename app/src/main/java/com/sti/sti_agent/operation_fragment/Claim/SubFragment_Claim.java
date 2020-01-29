@@ -787,8 +787,8 @@ public class SubFragment_Claim extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(estimate_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/claim_image" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -863,8 +863,8 @@ public class SubFragment_Claim extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(estimate_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/claim_image" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -940,8 +940,8 @@ public class SubFragment_Claim extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(damage_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/claim_image" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -1016,8 +1016,8 @@ public class SubFragment_Claim extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(damage_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/claim_image" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -1092,8 +1092,8 @@ public class SubFragment_Claim extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(Uri.parse(otherdoc_img_uri.toString()))
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/claim_image" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
@@ -1168,8 +1168,8 @@ public class SubFragment_Claim extends Fragment implements View.OnClickListener{
                         } else {
 
                             String imageId = MediaManager.get().upload(otherdoc_img_uri)
-                                    .option("public_id", "user_registration/profile_photos/vehicle_image" + name)
-                                    .unsigned("xbiscrhh").callback(new UploadCallback() {
+                                    .option("public_id", "agent_registration/agent_files/claim_image" + name)
+                                    .unsigned("z2uab1xl").callback(new UploadCallback() {
                                         @Override
                                         public void onStart(String requestId) {
                                             // your code here
